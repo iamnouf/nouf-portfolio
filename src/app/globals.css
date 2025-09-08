@@ -235,3 +235,82 @@ color: #C5C3CC;
   transform: translateY(-1px); /* moves button up slightly */
   filter: brightness(1.04); /* brighten it */
 }
+
+
+/* Mobile Edit */
+/* Navbar container */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: transparent;
+  backdrop-filter: blur(10px);
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* Desktop links */
+.links {
+  display: flex;
+  gap: 28px;
+}
+.links a {
+  text-decoration: none;
+  opacity: .9;
+}
+.links a:hover {
+  opacity: 1;
+}
+
+/* Hamburger button */
+.menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.menu-btn span {
+  width: 22px;
+  height: 2px;
+  background: var(--text, #fff);
+  border-radius: 2px;
+}
+
+/* Mobile menu (hidden by default) */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  background: rgba(15,24,33,.95);
+  padding: 16px;
+  position: absolute;
+  top: 60px; /* just below navbar */
+  right: 20px;
+  border-radius: 8px;
+}
+.mobile-menu a {
+  text-decoration: none;
+}
+.mobile-menu.open {
+  display: flex;
+}
+
+/* Breakpoint */
+@media (max-width: 900px) {
+  .links {
+    display: none; /* hide desktop links */
+  }
+  .menu-btn {
+    display: flex; /* show hamburger */
+  }
+}
