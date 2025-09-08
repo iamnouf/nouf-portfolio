@@ -3,7 +3,13 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --accent: #5FB5D7;
+  --accent-2: #837C97;
+  --accent-3: #a3c8ff;
+  --bg: #0f1821;  /* your page background */
 }
+
+
 
 @theme inline {
   --color-background: var(--background);
@@ -20,7 +26,212 @@
 }
 
 body {
-  background: var(--background);
+  background: #1F2833;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.brand {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #C5C3CC; /* cyan, for example */
+  letter-spacing: 0.5px;
+  padding-right: 600px;
+}
+
+#about, #project{
+color: #C5C3CC;
+}
+
+#home, #skills, #contact{
+  color: #7D788B;
+}
+
+
+.socials {
+  display: flex; /* put items side by side */
+  gap: 20px; /* space between icons */
+  margin-top: 20px; /* push down from buttons */
+  align-items: center; /* vertical centering */
+  padding-top: 30px;
+  padding-left: 150px;
+}
+
+.socials a img {
+  display: block; /* remove extra space below image */
+}
+
+.socials a:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+.hero {
+  position: relative; /* needed so the ::before background glow is positioned correctly */
+  padding: 100px 60px 64px; /* top padding: 100px, bottom padding: 64px */
+  overflow: clip; /* keeps animation inside section on mobile */
+
+}
+
+/* the art element */
+.hero-art{
+  position: absolute;
+  right: max(0px, calc((100vw - 1200px)/2 - 40px)); /* hugs container’s right edge */
+  top: 80px;
+  width: clamp(260px, 34vw, 520px);
+  height: clamp(260px, 34vw, 520px);
+  z-index: 0;
+  filter: blur(32px);
+  opacity: .45;
+  pointer-events: none;
+  border-radius: 58% 42% 60% 40% / 48% 56% 44% 52%;
+  background:
+    radial-gradient(40% 40% at 70% 30%, var(--accent-3) 0%, transparent 70%),
+    radial-gradient(45% 45% at 30% 70%, var(--accent-2) 0%, transparent 70%),
+    radial-gradient(60% 70% at 50% 50%, var(--accent) 0%, transparent 75%);
+  animation: heroFloat 9s ease-in-out infinite alternate,
+             heroMorph 22s ease-in-out infinite alternate;
+             opacity:.50;                 /* was .45 */
+             filter: blur(26px);          /* a bit sharper */
+             transform: translateX(-6%) translateY(-2%);
+}
+
+/* floating left-right + slight up-down */
+@keyframes heroFloat{
+  0%   { transform: translate(10px, 0) rotate(0deg) scale(1); }
+  100% { transform: translate(-20px, -10px) rotate(6deg) scale(1.04); }
+}
+
+/* slow organic shape change */
+@keyframes heroMorph{
+  0%{
+    border-radius: 58% 42% 60% 40% / 48% 56% 44% 52%;
+  }
+  50%{
+    border-radius: 45% 55% 40% 60% / 55% 45% 60% 40%;
+  }
+  100%{
+    border-radius: 62% 38% 48% 52% / 42% 62% 38% 58%;
+  }
+}
+
+/* keep content above art */
+.hero > .container{ position: relative; z-index: 1; }
+
+/* reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce){
+  .hero-art{ animation: none; opacity: .28; }
+}
+
+/* hide art on very small screens if space is tight */
+@media (max-width: 600px){
+  .hero-art{ opacity: .25; filter: blur(28px); width: 65vw; height: 65vw; right: -10px; }
+}
+
+.hero-art{ animation: heroFloat 10s ease-in-out infinite alternate; }
+@keyframes heroFloat{
+  0%   { transform: translateX(-6%) translateY(-2%) scale(1); }
+  100% { transform: translateX(-9%) translateY(-4%) scale(1.03); }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .hero-art{ animation:none; }
+}
+
+/* Keep it tidy on phones */
+@media (max-width: 700px){
+  .hero-art{
+    width: 65vw; height: 65vw;
+    right: -8px; top: 60px; opacity:.28; filter: blur(22px);
+  }
+}
+
+
+
+.kicker {
+  color: #c5c3cc; /* lighter color */
+  font-weight: 600; /* semi-bold */
+  letter-spacing: 0.3px; /* slightly spaced out letters */
+  margin-bottom: 8px; /* space under */
+  font-size: 30px;
+}
+
+.title {
+  font-weight: 700; /* bold */
+  font-size: clamp(
+    34px,
+    5vw,
+    56px
+  ); /* responsive: min 34px, max 56px, scale with viewport width */
+  letter-spacing: 0.2px;
+  background: linear-gradient(90deg, #837c97 0%, #5fb5d7 100%);
+  -webkit-background-clip: text; /* show gradient only inside text */
+  -webkit-text-fill-color: transparent; /* make text transparent so gradient shows */
+}
+
+.subtitle {
+  color: #c5c3cc; /* lighter color */
+  font-weight: 100;
+  font-size: clamp(20px, 3.2vw, 40px);
+  opacity: 0.9; /* slightly transparent */
+  margin: 8px 0 14px; /* top/bottom spacing */
+}
+
+.lead {
+  color: #78a1d0; /* lighter color */
+  max-width: 60ch; /* limit line length ~60 characters */
+  line-height: 1.75; /* more breathing room */
+  margin-top: 6px;
+
+}
+
+.actions {
+  display: flex; /* put buttons side by side */
+  gap: 14px; /* space between buttons */
+  flex-wrap: wrap; /* if screen is small, move button to next line */
+  margin-top: 24px;
+}
+
+.btn {
+  background: transparent; /* no fill */
+  border: 2px solid;
+  border-image: linear-gradient(90deg, #837c97, #5fb5d7) 1;
+  border-radius: 999px;
+  box-shadow: none;
+  display: inline-block;
+  padding: 5px 18px;
+  border-radius: 999px; /* makes pill shape */
+  transition: transform 0.15s ease, filter 0.15s ease, box-shadow 0.2s ease;
+}
+
+.btn.linear {
+  background:
+    /* inner fill */ linear-gradient(
+        var(--bg, #1F2833),
+        var(--bg, #1F2833)
+      )
+      padding-box,
+    /* border grad */ linear-gradient(90deg, #837c97, #5fb5d7) border-box;
+  border: 2px solid transparent; /* we’ll paint the border via background */
+  border-radius: 999px; /* 🔑 makes the pill shape */
+  padding: 5px 35px;
+  font-weight: 200;
+  color: #b59bb2;
+  transition: 0.3s;
+}
+
+
+.btn.primary {
+  background: linear-gradient(90deg, #837c97 0%, #5fb5d7 100%);
+  border: none;
+  font-weight: 200;
+  color: black;
+  box-shadow: 0 16px 40px rgba(124, 140, 251, 0.35); /* brighter glow */
+}
+
+.btn:hover {
+  transform: translateY(-1px); /* moves button up slightly */
+  filter: brightness(1.04); /* brighten it */
 }
