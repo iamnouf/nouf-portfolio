@@ -3,13 +3,11 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --accent: #5FB5D7;
-  --accent-2: #837C97;
+  --accent: #5fb5d7;
+  --accent-2: #837c97;
   --accent-3: #a3c8ff;
-  --bg: #0f1821;  /* your page background */
+  --bg: #0f1821; /* your page background */
 }
-
-
 
 @theme inline {
   --color-background: var(--background);
@@ -26,7 +24,7 @@
 }
 
 body {
-  background: #1F2833;
+  background: #1f2833;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -35,19 +33,20 @@ body {
   font-family: var(--font-poppins), sans-serif;
   font-weight: 700;
   font-size: 20px;
-  color: #C5C3CC; /* cyan, for example */
+  color: #c5c3cc; /* cyan, for example */
   letter-spacing: 0.5px;
-  padding-right: 600px;
 }
 
-#about, #project{
-color: #C5C3CC;
+#about,
+#project {
+  color: #c5c3cc;
 }
 
-#home, #skills, #contact{
-  color: #7D788B;
+#home,
+#skills,
+#contact {
+  color: #7d788b;
 }
-
 
 .socials {
   display: flex; /* put items side by side */
@@ -71,84 +70,115 @@ color: #C5C3CC;
   position: relative; /* needed so the ::before background glow is positioned correctly */
   padding: 100px 60px 64px; /* top padding: 100px, bottom padding: 64px */
   overflow: clip; /* keeps animation inside section on mobile */
-
 }
 
 /* the art element */
-.hero-art{
+.hero-art {
   position: absolute;
-  right: max(0px, calc((100vw - 1200px)/2 - 40px)); /* hugs container’s right edge */
+  right: max(
+    0px,
+    calc((100vw - 1200px) / 2 - 40px)
+  ); /* hugs container’s right edge */
   top: 80px;
   width: clamp(260px, 34vw, 520px);
   height: clamp(260px, 34vw, 520px);
   z-index: 0;
   filter: blur(32px);
-  opacity: .45;
+  opacity: 0.45;
   pointer-events: none;
   border-radius: 58% 42% 60% 40% / 48% 56% 44% 52%;
-  background:
-    radial-gradient(40% 40% at 70% 30%, var(--accent-3) 0%, transparent 70%),
+  background: radial-gradient(
+      40% 40% at 70% 30%,
+      var(--accent-3) 0%,
+      transparent 70%
+    ),
     radial-gradient(45% 45% at 30% 70%, var(--accent-2) 0%, transparent 70%),
     radial-gradient(60% 70% at 50% 50%, var(--accent) 0%, transparent 75%);
   animation: heroFloat 9s ease-in-out infinite alternate,
-             heroMorph 22s ease-in-out infinite alternate;
-             opacity:.50;                 /* was .45 */
-             filter: blur(26px);          /* a bit sharper */
-             transform: translateX(-6%) translateY(-2%);
+    heroMorph 22s ease-in-out infinite alternate;
+  opacity: 0.5; /* was .45 */
+  filter: blur(26px); /* a bit sharper */
+  transform: translateX(-6%) translateY(-2%);
 }
 
 /* floating left-right + slight up-down */
-@keyframes heroFloat{
-  0%   { transform: translate(10px, 0) rotate(0deg) scale(1); }
-  100% { transform: translate(-20px, -10px) rotate(6deg) scale(1.04); }
+@keyframes heroFloat {
+  0% {
+    transform: translate(10px, 0) rotate(0deg) scale(1);
+  }
+  100% {
+    transform: translate(-20px, -10px) rotate(6deg) scale(1.04);
+  }
 }
 
 /* slow organic shape change */
-@keyframes heroMorph{
-  0%{
+@keyframes heroMorph {
+  0% {
     border-radius: 58% 42% 60% 40% / 48% 56% 44% 52%;
   }
-  50%{
+  50% {
     border-radius: 45% 55% 40% 60% / 55% 45% 60% 40%;
   }
-  100%{
+  100% {
     border-radius: 62% 38% 48% 52% / 42% 62% 38% 58%;
   }
 }
 
 /* keep content above art */
-.hero > .container{ position: relative; z-index: 1; }
+.hero > .container {
+  position: relative;
+  z-index: 1;
+}
 
 /* reduce motion for accessibility */
-@media (prefers-reduced-motion: reduce){
-  .hero-art{ animation: none; opacity: .28; }
-}
-
-/* hide art on very small screens if space is tight */
-@media (max-width: 600px){
-  .hero-art{ opacity: .25; filter: blur(28px); width: 65vw; height: 65vw; right: -10px; }
-}
-
-.hero-art{ animation: heroFloat 10s ease-in-out infinite alternate; }
-@keyframes heroFloat{
-  0%   { transform: translateX(-6%) translateY(-2%) scale(1); }
-  100% { transform: translateX(-9%) translateY(-4%) scale(1.03); }
-}
-
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce){
-  .hero-art{ animation:none; }
-}
-
-/* Keep it tidy on phones */
-@media (max-width: 700px){
-  .hero-art{
-    width: 65vw; height: 65vw;
-    right: -8px; top: 60px; opacity:.28; filter: blur(22px);
+@media (prefers-reduced-motion: reduce) {
+  .hero-art {
+    animation: none;
+    opacity: 0.28;
   }
 }
 
+/* hide art on very small screens if space is tight */
+@media (max-width: 600px) {
+  .hero-art {
+    opacity: 0.25;
+    filter: blur(28px);
+    width: 65vw;
+    height: 65vw;
+    right: -10px;
+  }
+}
 
+.hero-art {
+  animation: heroFloat 10s ease-in-out infinite alternate;
+}
+@keyframes heroFloat {
+  0% {
+    transform: translateX(-6%) translateY(-2%) scale(1);
+  }
+  100% {
+    transform: translateX(-9%) translateY(-4%) scale(1.03);
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-art {
+    animation: none;
+  }
+}
+
+/* Keep it tidy on phones */
+@media (max-width: 700px) {
+  .hero-art {
+    width: 65vw;
+    height: 65vw;
+    right: -8px;
+    top: 60px;
+    opacity: 0.28;
+    filter: blur(22px);
+  }
+}
 
 .kicker {
   color: #c5c3cc; /* lighter color */
@@ -184,7 +214,6 @@ color: #C5C3CC;
   max-width: 60ch; /* limit line length ~60 characters */
   line-height: 1.75; /* more breathing room */
   margin-top: 6px;
-
 }
 
 .actions {
@@ -209,8 +238,8 @@ color: #C5C3CC;
 .btn.linear {
   background:
     /* inner fill */ linear-gradient(
-        var(--bg, #1F2833),
-        var(--bg, #1F2833)
+        var(--bg, #1f2833),
+        var(--bg, #1f2833)
       )
       padding-box,
     /* border grad */ linear-gradient(90deg, #837c97, #5fb5d7) border-box;
@@ -221,7 +250,6 @@ color: #C5C3CC;
   color: #b59bb2;
   transition: 0.3s;
 }
-
 
 .btn.primary {
   background: linear-gradient(90deg, #837c97 0%, #5fb5d7 100%);
@@ -236,9 +264,10 @@ color: #C5C3CC;
   filter: brightness(1.04); /* brighten it */
 }
 
-
 /* Mobile Edit */
-/* Navbar container */
+
+/* ========== NAVBAR ثابت وبدون تعارض ========== */
+
 .navbar {
   display: flex;
   align-items: center;
@@ -251,66 +280,121 @@ color: #C5C3CC;
   backdrop-filter: blur(10px);
 }
 
-.brand {
-  font-weight: 700;
-  font-size: 18px;
+.nav-inner {
+  display: flex;
+  align-items: center;     /* يخلي العناصر بنفس الخط العمودي */
+  justify-content: space-between; /* يخلي اللوقو يسار واللينكات يمين */
+
+
 }
 
-/* Desktop links */
+/* الروابط على الديسكتوب */
 .links {
   display: flex;
   gap: 28px;
 }
 .links a {
   text-decoration: none;
-  opacity: .9;
+  opacity: 0.9;
 }
 .links a:hover {
   opacity: 1;
 }
 
-/* Hamburger button */
+/* زر الهامبرغر: مثبّت دائمًا في يمين الهيدر */
 .menu-btn {
-  display: none;
   flex-direction: column;
+  position: absolute; /* أهم نقطة */
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
   gap: 5px;
-  background: transparent;
-  border: none;
   cursor: pointer;
+  z-index: 70; /* فوق الروابط */
 }
 .menu-btn span {
   width: 22px;
   height: 2px;
-  background: var(--text, #fff);
+  background: #fff;
   border-radius: 2px;
 }
 
-/* Mobile menu (hidden by default) */
+/* قائمة الموبايل (منبثقة) */
 .mobile-menu {
-  display: none;
+  position: fixed;
+  top: 64px;
+  right: 12px;
+  width: min(84vw, 320px);
+  display: flex;
   flex-direction: column;
-  gap: 12px;
-  background: rgba(15,24,33,.95);
-  padding: 16px;
-  position: absolute;
-  top: 60px; /* just below navbar */
-  right: 20px;
-  border-radius: 8px;
+  gap: 6px;
+  padding: 10px;
+  border-radius: 14px;
+  background: rgba(18, 26, 36, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+  transform-origin: top right;
+  transform: scale(0.96) translateY(-8px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.18s ease, opacity 0.18s ease;
+  z-index: 80;
 }
 .mobile-menu a {
+  display: block;
+  padding: 12px 10px;
+  border-radius: 10px;
   text-decoration: none;
 }
+.mobile-menu a:active {
+  background: rgba(255, 255, 255, 0.06);
+}
 .mobile-menu.open {
-  display: flex;
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  pointer-events: auto;
 }
 
-/* Breakpoint */
+/* الخلفية الشفافة أثناء فتح القائمة */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 75;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(2px);
+}
+
+/* Mobile only */
 @media (max-width: 900px) {
   .links {
-    display: none; /* hide desktop links */
+    display: none;    /* تخفي روابط الديسكتوب */
   }
   .menu-btn {
-    display: flex; /* show hamburger */
+    display: flex;    /* تظهر زر الهامبرغر */
   }
+}
+
+/* Desktop only */
+@media (min-width: 901px) {
+  .menu-btn {
+    display: none;   /* يخفي زر الهامبرغر في الشاشات الكبيرة */
+  }
+  .links {
+    display: flex;   /* يظهر الروابط */
+  }
+}
+
+/* منع التمرير الجانبي نهائيًا */
+html,
+body {
+  overflow-x: hidden;
 }
