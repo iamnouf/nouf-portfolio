@@ -2,6 +2,9 @@ import Header from "@/components/Header";
 import "./globals.css";
 import { Inter, Poppins } from "next/font/google";
 import Hero from "@/components/Hero";
+import AboutPage from "./about/page";
+import SkillsPage from "./skills/page";
+// import SkillsPage from "./skills/page";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const poppins = Poppins({
@@ -21,7 +24,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
       <body>
         <Header />  {/*  👈 shows on every page */}
-        <Hero /> 
+        <Hero />
+        <AboutPage />
+        <SkillsPage />
+
         {children}
         </body>
     </html>

@@ -1,6 +1,7 @@
+
 export default function Hero() {
   return (
-    <section className="hero">
+    <section  className="hero parallax">
 
         {/* decorative art on the right */}
         <div className="hero-art" aria-hidden="true"></div>
