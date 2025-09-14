@@ -11,9 +11,10 @@ import {
   SiTrello, SiNextdotjs, SiNodedotjs, SiTailwindcss,
   SiPostman, SiTestinglibrary, SiApachejmeter, SiAdobeillustrator
 } from "react-icons/si";
+import type { ReactNode } from "react"; // <— مهم
 
 /* ------------------ DATA ------------------ */
-const SKILLS: Record<string, { label: string; icon: React.ReactNode}[]> = {
+const SKILLS: Record<string, { label: string; icon: ReactNode }[]> = {
   Languages: [
     { label: "HTML",        icon: <FaHtml5 color="#E34F26" /> },
     { label: "CSS",         icon: <FaCss3Alt color="#1572B6" /> },
