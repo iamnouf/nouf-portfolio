@@ -623,7 +623,7 @@ body {
   .about { padding: 60px 20px; }  /* Mobile */
 }
 
-/* --- Section wrapper --- */
+/* ---- Section wrapper ---- */
 .skills-section {
   margin: 160px auto 70px;   /* top, auto center left/right, bottom */
   text-align: center;

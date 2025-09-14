@@ -11,7 +11,7 @@ import {
   SiTrello, SiNextdotjs, SiNodedotjs, SiTailwindcss,
   SiPostman, SiTestinglibrary, SiApachejmeter, SiAdobeillustrator
 } from "react-icons/si";
-import type { ReactNode } from "react"; // <— مهم
+import type { ReactNode } from "react"; 
 
 /* ------------------ DATA ------------------- */
 const SKILLS: Record<string, { label: string; icon: ReactNode }[]> = {
