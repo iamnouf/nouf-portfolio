@@ -13,7 +13,7 @@ import {
 } from "react-icons/si";
 
 /* ------------------ DATA ------------------ */
-const SKILLS: Record<string, { label: string; icon: JSX.Element }[]> = {
+const SKILLS: Record<string, { label: string; icon: React.ReactNode}[]> = {
   Languages: [
     { label: "HTML",        icon: <FaHtml5 color="#E34F26" /> },
     { label: "CSS",         icon: <FaCss3Alt color="#1572B6" /> },
