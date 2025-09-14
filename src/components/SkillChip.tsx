@@ -1,9 +1,10 @@
 // components/SkillChip.tsx
 import React from "react";
+import type { ReactNode } from "react"; 
 
 type SkillChipProps = {
   label: string;
-  icon: JSX.Element;
+  icon: ReactNode;
 };
 
 export default function SkillChip({ label, icon }: SkillChipProps) {
