@@ -13,7 +13,7 @@ import {
 } from "react-icons/si";
 import type { ReactNode } from "react"; // <— مهم
 
-/* ------------------ DATA ------------------ */
+/* ------------------ DATA ------------------- */
 const SKILLS: Record<string, { label: string; icon: ReactNode }[]> = {
   Languages: [
     { label: "HTML",        icon: <FaHtml5 color="#E34F26" /> },
