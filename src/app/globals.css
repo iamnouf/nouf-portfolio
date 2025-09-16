@@ -528,11 +528,13 @@ body {
   
  }
 .tl-title  {
-  font-weight: 800;
+    font-weight: 800;
   font-size: clamp(26px, 3.4vw, 44px);
-  background: linear-gradient(90deg, #837C97, #5FB5D7);
+  background: linear-gradient(90deg, #a3c8ff, #5fb5d7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin: 0 0 8px;
+  
   
 }
 .tl-sub    { 
@@ -648,9 +650,13 @@ body {
 
 
 .skills-title {
-  font-size: clamp(24px, 4vw, 36px);
-  font-weight: 700;
-  color: #C5C3CC;
+      font-weight: 800;
+  font-size: clamp(26px, 3.4vw, 44px);
+  background: linear-gradient(90deg, #a3c8ff, #5fb5d7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0 0 8px;
+  
 }
 
 .skills-sub {
@@ -793,6 +799,7 @@ body {
 
 /* ===== Contact Section ===== */
 .contact-section {
+  
   max-width: 720px;
   margin: 0 auto;
   padding: 80px 16px 120px;
@@ -801,6 +808,8 @@ body {
 }
 
 .contact-title {
+        background-image: url("/icons/stars.png");
+
   font-weight: 800;
   font-size: clamp(32px, 5vw, 64px);
   background: linear-gradient(90deg, #a3c8ff, #5fb5d7);
@@ -810,6 +819,8 @@ body {
 }
 
 .contact-sub {
+        background-image: url("/icons/stars.png");
+
   color: #c5c3cc;
   opacity: .95;
   margin-bottom: 26px;
@@ -818,6 +829,8 @@ body {
 }
 
 .contact-socials {
+        background-image: url("/icons/stars.png");
+
   display: flex;
   gap: 18px;
   justify-content: center;
@@ -834,7 +847,9 @@ body {
 .contact-socials svg { font-size: 18px; color: #cfe7ff; }
 
 /* form */
-.contact-form { display: grid; gap: 14px; margin-top: 6px; }
+.contact-form { 
+        background-image: url("/icons/stars.png");
+display: grid; gap: 14px; margin-top: 6px; }
 .field {
   width: 70%;
   margin-left: 100px;
@@ -851,9 +866,11 @@ body {
   border-color: rgba(95,181,215,.8);
   box-shadow: 0 0 0 3px rgba(95,181,215,.2);
 }
-.area { resize: vertical; min-height: 160px; }
+.area { resize: vertical; min-height: 270px; }
 
 .btn-gradient {
+        background-image: url("/icons/stars.png");
+
   padding: 12px 18px;
   font-weight: 700;
   letter-spacing: .5px;

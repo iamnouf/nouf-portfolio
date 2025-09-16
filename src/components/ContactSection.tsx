@@ -26,14 +26,6 @@ export default function ContactSection() {
 
     setStatus({ type: "loading" });
 
-    // OPTION A — Formspree (uncomment & put your endpoint):
-    // const res = await fetch("https://formspree.io/f/XXXXXXXX", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify({ name, email, message }),
-    // });
-
-    // OPTION B — Next.js route (/api/contact)
     const res = await fetch("/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
