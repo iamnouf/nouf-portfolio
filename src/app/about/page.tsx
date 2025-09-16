@@ -1,10 +1,20 @@
+"use client";
 import Timeline from "@/components/Timeline";
 import PinWithinSection from "@/components/PinWithinSection";
+import { motion } from "framer-motion";
 
 export default function AboutPage() {
 
 
   return (
+    
+     <motion.section
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+      viewport={{ once: true }}
+    >
+
     <section className="about" id="about" >
       {/* <h1 className="about-heading">About Me</h1> */}
         <div  className="about-wrap container">
@@ -34,5 +44,7 @@ export default function AboutPage() {
         </div>
       </div>
     </section>
+        </motion.section>
+
   );
 }

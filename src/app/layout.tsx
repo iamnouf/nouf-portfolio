@@ -4,6 +4,8 @@ import { Inter, Poppins } from "next/font/google";
 import Hero from "@/components/Hero";
 import AboutPage from "./about/page";
 import SkillsPage from "./skills/page";
+import ProjectsPage from "./projects/page";
+import ContactSection from "@/components/ContactSection";
 // import SkillsPage from "./skills/page";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -23,10 +25,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
 
       <body>
+        
         <Header />  {/*  👈 shows on every page */}
         <Hero />
         <AboutPage />
         <SkillsPage />
+        <ProjectsPage />
+        <ContactSection />
 
         {children}
         </body>

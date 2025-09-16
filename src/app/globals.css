@@ -30,6 +30,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+html { scroll-behavior: smooth; }
 
 .brand {
   font-family: var(--font-poppins), sans-serif;
@@ -75,7 +76,7 @@ body {
 }
 
 /* the art element */
-.hero-art {
+.hero-art {   
   position: absolute;
   right: max(
     0px,
@@ -183,6 +184,7 @@ body {
 }
 
 .kicker {
+    background-image: url("/icons/stars.png");
   color: #c5c3cc; /* lighter color */
   font-weight: 600; /* semi-bold */
   letter-spacing: 0.3px; /* slightly spaced out letters */
@@ -191,6 +193,7 @@ body {
 }
 
 .title {
+    background-image: url("/icons/stars.png");
   font-weight: 700; /* bold */
   font-size: clamp(
     34px,
@@ -204,6 +207,7 @@ body {
 }
 
 .subtitle {
+    background-image: url("/icons/stars.png");
   color: #c5c3cc; /* lighter color */
   font-weight: 100;
   font-size: clamp(20px, 3.2vw, 40px);
@@ -212,13 +216,16 @@ body {
 }
 
 .lead {
+    background-image: url("/icons/stars.png");
   color: #78a1d0; /* lighter color */
   max-width: 60ch; /* limit line length ~60 characters */
   line-height: 1.75; /* more breathing room */
   margin-top: 6px;
+  
 }
 
 .actions {
+    background-image: url("/icons/stars.png");
   display: flex; /* put buttons side by side */
   gap: 14px; /* space between buttons */
   flex-wrap: wrap; /* if screen is small, move button to next line */
@@ -277,7 +284,6 @@ body {
   position: relative;
   top: 0;
   z-index: 50;
-  background: transparent;
   backdrop-filter: blur(10px);
   
 }
@@ -405,6 +411,7 @@ body {
 
 /* About layout */
 .about {
+  
   position: relative;           /* مهم لتحديد حدود الـ sticky */  
   padding: 17px 0;
 
@@ -528,7 +535,11 @@ body {
   -webkit-text-fill-color: transparent;
   
 }
-.tl-sub    { opacity:.75; margin-top:8px; }
+.tl-sub    { 
+  opacity:.75; 
+  margin-top:8px; 
+  color: white;
+}
 
 /* vertical line */
 .timeline {
@@ -625,6 +636,7 @@ body {
 
 /* ---- Section wrapper ---- */
 .skills-section {
+  background-image: url("/icons/stars.png");
   margin: 160px auto 70px;   /* top, auto center left/right, bottom */
   text-align: center;
   position: relative;
@@ -724,3 +736,145 @@ body {
   .skill-icon { width: 52px; height: 52px; }
   .skill-icon svg, .skill-icon img { width: 26px; height: 26px; }
 }
+
+/* ===== Projects Section ===== */
+.projects-section {
+  margin: 120px auto 40px;
+  position: relative;
+  min-height: 550px;
+}
+
+/* شبكة الكروت */
+.projects-grid {
+  --col: 3;
+  display: grid;
+  grid-template-columns: repeat(var(--col), minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 22px;
+}
+@media (max-width: 1100px) { .projects-grid { --col: 2; } }
+@media (max-width: 640px)  { .projects-grid { --col: 1; } }
+
+/* الكارد (نفس ستايلك السابق) */
+.proj-card {
+  display: grid;
+  grid-template-rows: 200px auto;
+  border-radius: 18px;
+  overflow: hidden;
+  background:
+    linear-gradient(#1f2833,#1f2833) padding-box,
+    linear-gradient(90deg, #837C97, #5FB5D7) border-box;
+  border: 1px solid transparent;
+  box-shadow: 0 18px 60px rgba(0,0,0,.25);
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+.proj-card:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.03);
+  box-shadow: 0 24px 70px rgba(0,0,0,.35);
+}
+
+.proj-cover { position: relative; }
+.proj-cover .obj { object-fit: cover; object-position: center; }
+
+.proj-body { padding: 16px 16px 18px; }
+.proj-title { font-weight: 700; font-size: clamp(16px, 2.2vw, 20px); margin: 2px 0 6px; color: #e2e0ea; }
+.proj-blurb { color: #c5c3cc; opacity: .9; line-height: 1.6; margin: 0 0 10px; min-height: 44px; }
+.proj-tech { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 20px; }
+.chip.mini {
+  font-size: 12px; padding: 4px 10px; border-radius: 999px; color: #c9d3e7;
+  background:
+    linear-gradient(var(--bg, #1f2833), var(--bg, #1f2833)) padding-box,
+    linear-gradient(90deg, #837C97, #5FB5D7) border-box;
+  border: 1px solid transparent;
+}
+.proj-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.btn.sm { padding: 6px 14px; font-size: 13px; }
+
+/* ===== Contact Section ===== */
+.contact-section {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 80px 16px 120px;
+  text-align: center;
+
+}
+
+.contact-title {
+  font-weight: 800;
+  font-size: clamp(32px, 5vw, 64px);
+  background: linear-gradient(90deg, #a3c8ff, #5fb5d7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0 0 8px;
+}
+
+.contact-sub {
+  color: #c5c3cc;
+  opacity: .95;
+  margin-bottom: 26px;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.contact-socials {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  margin: 10px 0 28px;
+}
+.contact-socials a {
+  width: 36px; height: 36px;
+  display: grid; place-items: center;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.08);
+  transition: transform .15s ease, filter .15s ease;
+}
+.contact-socials a:hover { transform: translateY(-2px); filter: brightness(1.08); }
+.contact-socials svg { font-size: 18px; color: #cfe7ff; }
+
+/* form */
+.contact-form { display: grid; gap: 14px; margin-top: 6px; }
+.field {
+  width: 70%;
+  margin-left: 100px;
+  color: #cfe7ff;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 10px;
+  padding: 12px 14px;
+  outline: none;
+  transition: border-color .18s ease, box-shadow .18s ease;
+}
+.field::placeholder { color: #9fb0c6; }
+.field:focus {
+  border-color: rgba(95,181,215,.8);
+  box-shadow: 0 0 0 3px rgba(95,181,215,.2);
+}
+.area { resize: vertical; min-height: 160px; }
+
+.btn-gradient {
+  padding: 12px 18px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  border-radius: 12px;
+  border: 0;
+  width: 70%;
+  margin-left: 100px;
+  cursor: pointer;
+  background: linear-gradient(90deg, #9bb5ff, #5fb5d7);
+  color: #0b1320;
+  box-shadow: 0 14px 30px rgba(124,140,251,.22);
+  transition: transform .15s ease, filter .15s ease, opacity .15s ease;
+}
+.btn-gradient:hover { transform: translateY(-1px); filter: brightness(1.04); }
+.btn-gradient:disabled { opacity: .6; cursor: not-allowed; }
+
+.form-msg { margin-top: 6px; font-size: 14px; }
+.form-msg.error { color: #ff9e9e; }
+.form-msg.success { color: #9ef5c4; }
+
+/* honeypot */
+.hp { position: absolute !important; left: -9999px !important; }
+
+#contact { scroll-margin-top: 96px; }

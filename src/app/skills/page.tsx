@@ -12,6 +12,7 @@ import {
   SiPostman, SiTestinglibrary, SiApachejmeter, SiAdobeillustrator
 } from "react-icons/si";
 import type { ReactNode } from "react"; 
+import { motion } from "framer-motion";
 
 /* ------------------ DATA ------------------- */
 const SKILLS: Record<string, { label: string; icon: ReactNode }[]> = {
@@ -73,6 +74,14 @@ export default function SkillsPage() {
   }, [active]);
 
   return (
+
+      <motion.section
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+      viewport={{ once: true }}
+    >
+
     <section className="skills-section">
       <h2 className="skills-title">Technical Skills</h2>
       <p className="skills-sub">My expertise across various technologies and tools</p>
@@ -98,5 +107,7 @@ export default function SkillsPage() {
         ))}
       </div>
     </section>
+            </motion.section>
+
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
+import SnapContainer from "./SnapContainer";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -23,6 +24,7 @@ export default function Header() {
   }, []);
 
   return (
+    
     <header className="navbar">
       <div className="nav-inner container">
         <Link href="/" className="brand">
@@ -67,5 +69,6 @@ export default function Header() {
         <Link href="/contact" id="contact" onClick={() => setOpen(false)}>.Contact Me</Link>
       </nav>
     </header>
+    
   );
 }

@@ -1,4 +1,11 @@
+import ProjectsSection from "@/components/ProjectsSection";
+
 export default function ProjectsPage() {
-    return <h1>Projects Page</h1>;
-  }
+  return (
+    <>
+      {/* ... hero / about / skills ... */}
+      <ProjectsSection />
+      {/* ... contact ... */}
+    </>
+  );  }
   

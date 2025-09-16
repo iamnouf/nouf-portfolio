@@ -1,6 +1,17 @@
+"use client";
+import { motion } from "framer-motion";
+import MotionSection from "./MotionSection";
 
 export default function Hero() {
   return (
+    
+     <motion.section
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+      viewport={{ once: true }}
+    >
+
     <section  className="hero parallax">
 
         {/* decorative art on the right */}
@@ -46,5 +57,7 @@ export default function Hero() {
         </div>
       </div>
     </section>
+        </motion.section>
+
   );
 }
