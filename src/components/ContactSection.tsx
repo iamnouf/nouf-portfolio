@@ -60,7 +60,7 @@ Feel free to reach out!
       </p>
 
      <div className="contact-socials" >
-          <a href="mailto:your@email.com" >
+          <a href="mailto:nouflghamdi@gmail.com" >
           <img src="/icons/email.png" alt="email" width="30" height="30" />
           </a>
           <a href="https://www.linkedin.com/in/your-handle" target="_blank"  rel="noreferrer">
