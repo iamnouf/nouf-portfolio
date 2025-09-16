@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
-import SnapContainer from "./SnapContainer";
 
 export default function Header() {
   const [open, setOpen] = useState(false);

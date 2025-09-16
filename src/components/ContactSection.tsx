@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { FiAtSign } from "react-icons/fi";
 
 type Status = { type: "idle" | "loading" | "success" | "error"; msg?: string };
 
